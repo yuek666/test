@@ -1,31 +1,56 @@
 /* Written by Amit Agarwal */
 /* web: ctrlq.org          */
 
-var url_organal = "https://translate.google.com.tw/?hl=zh-TW&sl=ja&tl=zh-TW&op=translate";
-var url_test = "https://translate.google.com.tw/?hl=zh-TW&sl=ja&tl=zh-TW&text=%E3%82%8F%E3%81%9F%E3%81%97&op=translate";
-var url_test = "https://tw.linovelib.com/novel/4480.html";
+/*  google translate url
+    var url_organal = "https://translate.google.com.tw/?hl=zh-TW&sl=ja&tl=zh-TW&op=translate";
+    var url_test = "https://translate.google.com.tw/?hl=zh-TW&sl=ja&tl=zh-TW&text=%E3%82%8F%E3%81%9F%E3%81%97&op=translate";
+    var url_test2 = "https://translate.google.com.tw/?hl=zh-TW&sl=zh-TW&tl=en&text=你好世界&op=translate"
+*/
+var url1 = "https://mazii.net/zh-TW/search/word/jatw/流石";
+
+
+
+var file = __dirname + "/test12.html";
+getApi( url1 );
 
 
 async function getApi( url ){
     var a = await fetch( url );
     var b = await a.text();
-    //console.log( b );
-    return b;
+    //save( file , b );    
+    getVal( b );
 }
 
-async function con(url) {
-    var t = await getApi( url );
-    console.log( t );
+var fs = require('fs');
+function save( filepath ,  input ){
+    fs.writeFile( filepath , input , function(err){
+        if (err) {
+            console.error(err)
+        }
+    });
+}
+
+async function getVal( promise ) {    
+    var txt = await promise;
+    const jsdom = require("jsdom");
+    const { JSDOM } = jsdom;
+    const $ = require("jquery")(new JSDOM(txt).window); // 創建虛擬 DOM
+    
+    var t = $("title:first").text();
+    console.log(t);
 }
 
 
 
-import * as deepl from 'deepl-node';
 
-const authKey = "f63c02c5-f056-..."; // Replace with your key
-const translator = new deepl.Translator(authKey);
 
-(async () => {
-    const result = await translator.translateText('Hello, world!', null, 'fr');
-    console.log(result.text); // Bonjour, le monde !
-})();
+
+
+
+
+/*
+<span class="ryNqvb" 
+    jsname="W297wb" 
+        jsaction="click:PDNqTc,GFf3ac,qlVvte;contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:PDNqTc,c2aHje"
+            >棉布</span>
+*/
