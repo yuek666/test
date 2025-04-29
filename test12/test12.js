@@ -7,6 +7,7 @@
     var url_test2 = "https://translate.google.com.tw/?hl=zh-TW&sl=zh-TW&tl=en&text=你好世界&op=translate"
 */
 var url1 = "https://mazii.net/zh-TW/search/word/jatw/流石";
+var url2 = "https://mazii.net/zh-TW/search/word/jatw/%E5%80%8B%E5%AD%97";
 
 
 
