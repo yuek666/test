@@ -13,4 +13,5 @@
     13 - 使用其他HTML內容
     14 - 取得html文字的部分內容
     15 - translate API
-    16 - 懸浮視窗
+    16 - 懸浮視窗 ( 預覽 )
+    17 - deal json with js
