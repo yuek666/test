@@ -6,7 +6,7 @@
     6 - javascript call java
         7 - javascript call javascript
         8 - storage api (Local storage) 
-        9 - javascript use json data
+    9 - deal json with js
         10 - javascript call html api
         11 - 取得鼠標反白的內容
         12 - translate (日文)
@@ -14,4 +14,4 @@
     14 - 取得html文字的部分內容
     15 - translate API
     16 - 懸浮視窗 ( 預覽 )
-    17 - deal json with js
+        17 - html 打勾框框
